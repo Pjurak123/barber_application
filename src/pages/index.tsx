@@ -187,7 +187,7 @@ const HomePage = () => {
         <div className="p-4">
           <div className="text-center">
             <p className="text-xs text-textColor-paragraph-color sort-font leading-7">
-              © 2021 Barber. All rights reserved.
+              © 2023 Barber. All rights reserved.
             </p>
             {/* add person who created page */}
             <p className="text-xs text-textColor-paragraph-color sort-font leading-7">

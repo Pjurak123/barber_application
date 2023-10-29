@@ -34,7 +34,7 @@ const GoogleMapsComp = ({ markers }: GoogleMapsCompProps) => {
   );
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyC3qkKv0ClW3EExyX73EdG7Lhr2JBP4KkE" as string,
+    googleMapsApiKey: process.env.API_KEY as string,
   });
 
   if (!isLoaded) {
