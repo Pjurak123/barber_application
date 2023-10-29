@@ -12,6 +12,7 @@ import ServiceCard from "../../components/ServiceCard";
 import Map from "../../components/Map";
 
 const HomePage = () => {
+  console.log("");
   const markers = [
     { title: "Location 1", lat: 40.74285, lng: -73.98231 },
     // Add more locations as needed
