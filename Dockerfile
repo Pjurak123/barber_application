@@ -1,5 +1,5 @@
 # Use the official Node.js 18 image as the base image
-FROM node:18-alpine
+FROM node:alpine
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install
