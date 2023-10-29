@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #161616;
+}
+
+.hero-bg-image {
+    background-image: linear-gradient(180deg, #161616, hsla(0, 0%, 6%, 0.25) 80%, #161616), url('/old_building1.jpeg');
+    background-position: center;
+    background-size: auto, cover;
+    background-repeat: repeat, no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    height: 100vh;
+  }
+
+.link-square{
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #748E63;
+}
+
+
+/* Font section */
+.sort-font{
+    font-family: 'Sorts Mill Goudy', serif;
+}
+.courier-font{
+    font-family: 'Courier Prime', monospace;
+}
+.great-vibes{
+    font-family: 'Great Vibes', cursive;
+}
+
+
