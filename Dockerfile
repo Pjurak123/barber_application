@@ -1,20 +1,13 @@
 # build environment
-FROM node:16-alpine
-RUN mkdir -p /app
-WORKDIR /app
-COPY . .
+FROM node:18-alpine as build
+COPY package.json ./
+COPY package-lock.json ./
+COPY . ./
 RUN npm install
 RUN npm run build
-EXPOSE 80
-CMD ["npm", "start"]
 
-# Production Stage
-FROM node:16-alpine AS PRODUCTION_STAGE
-WORKDIR /app
-COPY --from=BUILD_IMAGE /app/package*.json ./
-COPY --from=BUILD_IMAGE /app/.next ./.next
-COPY --from=BUILD_IMAGE /app/public ./public
-COPY --from=BUILD_IMAGE /app/node_modules ./node_modules
-ENV NODE_ENV=production
+# production environment
+FROM nginx:stable-alpine
+COPY --from=build /build /usr/share/nginx/html
 EXPOSE 80
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
